@@ -3,7 +3,7 @@
 /**
 * Clase clientes_model
 */
-class Clientes_model extends CI_Model
+class curriculum_model extends CI_Model
 {
 	
 	private $tabla;
@@ -12,7 +12,7 @@ class Clientes_model extends CI_Model
             // Call the CI_Model constructor
             parent::__construct();
 
-            $this->tabla = "clientes";
+            $this->tabla = "curriculum";
         }
     //agregar registros
     public function add($_post)

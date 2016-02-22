@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clientes extends CI_Controller {
+class Curriculum extends CI_Controller {
 
 	private $controller;
 
@@ -13,7 +13,7 @@ class Clientes extends CI_Controller {
 
         $this->controller = strtolower(get_class()) ;
 
-        $this->load->model("Clientes_model");
+        $this->load->model("Curriculum_model");
 
         $this->load->library('form_validation');
 
@@ -32,7 +32,7 @@ class Clientes extends CI_Controller {
 		$this->validar_post();
 
 
- 		if ($this->form_validation->run('cliente') == FALSE)
+ 		if ($this->form_validation->run('curriculum') == FALSE)
         {
         	$data["controller"] = $this->controller;
 
@@ -46,7 +46,7 @@ class Clientes extends CI_Controller {
         {
             $_post = $this->input->post();
 
-			$_result =  $this->Clientes_model->add($_post );
+			$_result =  $this->Curriculum_model->add($_post );
 
 			if ($_result) 
 
@@ -68,7 +68,7 @@ class Clientes extends CI_Controller {
  
 		$data["controller"] = $this->controller;
 
-		$data['items'] = $this->Clientes_model->get();
+		$data['items'] = $this->Curriculum_model->get();
 
 		$data["view"] = 'master/'.$this->controller.'/load_list';
 
@@ -93,7 +93,7 @@ class Clientes extends CI_Controller {
 			 redirect($this->controller.'/show');
 
 
-		if (!$this->Clientes_model->get_by_id($id))
+		if (!$this->Curriculum_model->get_by_id($id))
 			 exit(json_encode(array('status'=>FALSE,'message'=>'id no registrado')));
 
 		$data["controller"] = $this->controller;
@@ -117,7 +117,7 @@ class Clientes extends CI_Controller {
 		$this->validar_post($id);
 
 
- 		if ($this->form_validation->run('cliente') == FALSE)
+ 		if ($this->form_validation->run('curriculum') == FALSE)
         {
 
         	$data["controller"] = $this->controller;
@@ -135,8 +135,11 @@ class Clientes extends CI_Controller {
         	$data['nombre']=$this->input->post('nombre',TRUE);
         	$data['apellidos']=$this->input->post('apellidos',TRUE);
         	$data['dni']=$this->input->post('dni',TRUE);
+        	$data['fecha_nac']=$this->input->post('fecha_nac',TRUE);
+        	$data['distrito']=$this->input->post('distrito',TRUE);
+        	$data['direccion']=$this->input->post('direccion',TRUE);
 
-			$_result =  $this->Clientes_model->update($data,$id);
+			$_result =  $this->Curriculum_model->update($data,$id);
 
 			if ($_result) 
 
@@ -166,13 +169,13 @@ class Clientes extends CI_Controller {
 		if (!is_numeric($id)) 
 			 exit(json_encode(array('status'=>FALSE,'message'=>'id no valido')));
 		
-		if (!$this->Clientes_model->get_by_id($id))
+		if (!$this->Curriculum_model->get_by_id($id))
 	 		exit(json_encode(array('status'=>FALSE,'message'=>'id no registrado')));
 
 	 
     	$data['estado'] = 99;
 
-		$_result =  $this->Clientes_model->delete($data,$id);
+		$_result =  $this->Curriculum_model->delete($data,$id);
 		 
 		if ($_result) 
 			redirect($this->controller.'/show');
@@ -198,12 +201,17 @@ class Clientes extends CI_Controller {
  		$this->form_validation->set_rules('apellidos', 'lang:apellidos', 'required|max_length[150]');
 
  		$this->form_validation->set_rules('dni', 'lang:dni', 'required|min_length[8]|max_length[8]|integer');
+		$this->form_validation->set_rules('fecha_nac', 'lang:fecha_nac', 'required|max_length[25]');
+		$this->form_validation->set_rules('distrito', 'lang:distrito', 'required|max_length[150]');
+		$this->form_validation->set_rules('direccion', 'lang:direccion', 'required|max_length[150]'); 		
+
+
 
  		if ($id){
  			if (!is_numeric($id)) 
  				 exit(json_encode(array('status'=>FALSE,'message'=>'id no valido')));
  			
- 			if (!$this->Clientes_model->get_by_id($id))
+ 			if (!$this->Curriculum_model->get_by_id($id))
 			 exit(json_encode(array('status'=>FALSE,'message'=>'id no registrado')));
  		} 
  		 	
