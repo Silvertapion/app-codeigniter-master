@@ -24,10 +24,8 @@
                       <tr>
                         <th>#</th>
                         <th>Nombre</th>
-                        <th>Apellidos</th>
- 
-                        <th>Dni</th>
- 
+                        <th>Apellidos</th> 
+                        <th>Dni</th> 
                         <th>Fecha Nacimiento</th>
                         <th>Distrito</th>
                         <th>Direccion</th>
@@ -46,10 +44,8 @@
                         <td><?php echo $i+1 ?></td>
                         <td><?php echo $items[$i]->nombre ?></td>
                         <td><?php echo $items[$i]->apellidos ?></td>
-                        <td><?php echo $items[$i]->dni ?></td>
- 
-                        <td><?php echo $items[$i]->fecha_nac ?></td>
-                        <td><?php echo $items[$i]->dni ?></td>
+                        <td><?php echo $items[$i]->dni ?></td> 
+                        <td><?php echo $items[$i]->fecha_nac ?></td>                        
                         <td><?php echo $items[$i]->distrito ?></td>
                         <td><?php echo $items[$i]->direccion ?></td>
  

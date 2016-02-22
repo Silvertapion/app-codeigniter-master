@@ -67,7 +67,7 @@
             <select name="distrito" id="distrito" class="form-control" required="">
 
               <option value="0">[Seleccione un distrito]</option>
-              <option value="1">Santa Anita</option>
+              <option value="Santa Anita">Santa Anita</option>
               <option value="2">SJL</option>
               <option value="3">Puente Piedra</option>
 
