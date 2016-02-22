@@ -332,6 +332,7 @@
               <ul class="treeview-menu">
                 <li class="active"><a href="<?php echo base_url('clientes/show') ?>   "><i class="fa fa-circle-o"></i> Clientes</a></li>
                 <li class="active"><a href="<?php echo base_url('usuarios/show') ?>   "><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li class="active"><a href="<?php echo base_url('curriculum/show') ?>   "><i class="fa fa-circle-o"></i> Curriculum</a></li>
               </ul>
             </li>
             <li class="treeview">
