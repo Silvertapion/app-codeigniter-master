@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                     <?php
-
+                      
                       $_count = count($items);
 
                       for ($i=0; $i < $_count; $i++){

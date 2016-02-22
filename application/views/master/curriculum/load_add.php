@@ -59,25 +59,25 @@
         <div class="form-group">
           <label for="dist" class="col-sm-2 control-label">Distrito</label>
           <div class="col-sm-4">
-            <select name="dist" id="dist" class="form-control" required="">
+            <select name="distrito" id="distrito" class="form-control" required="">
               <option value="0">[Seleccione un distrito]</option>
               <option value="1">Santa Anita</option>
               <option value="2">SJL</option>
               <option value="3">Puente Piedra</option>
             </select>
-            <div class="u-error"><?php echo form_error('dist'); ?></div>
+            <div class="u-error"><?php echo form_error('distrito'); ?></div>
           </div>
         </div>
         
         <div class="form-group">
-          <label for="dire" class="col-sm-2 control-label">Direccion</label>
+          <label for="direccion" class="col-sm-2 control-label">Direccion</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="dire" name="dire" placeholder="Direccion">
-            <div class="u-error"><?php echo form_error('dire'); ?></div>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+            <div class="u-error"><?php echo form_error('direccion'); ?></div>
           </div>
         </div>
      
-       
+      
       </div><!-- /.box-body -->
       <div class="box-footer">
         <a href="<?php echo base_url($controller.'/show') ?>" class="btn btn-danger"><span class="glyphicon glyphicon-left" aria-hidden="true"></span> Cancelar</a>

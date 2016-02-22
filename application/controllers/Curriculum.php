@@ -47,10 +47,9 @@ class Curriculum extends CI_Controller {
             $_post = $this->input->post();
 
 			$_result =  $this->Curriculum_model->add($_post );
-			console.log($this->db->last_query()); 
-
+				
 			if ($_result) 
-
+							
 				redirect($this->controller.'/show');
 
 			else
