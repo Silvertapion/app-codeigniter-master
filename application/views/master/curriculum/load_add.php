@@ -41,37 +41,38 @@
         </div>
 
         <div class="form-group">
-          <label for="dni" class="col-sm-2 control-label">DNI</label>
+          <label for="dni" class="col-sm-2 control-label">Dni</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI">
+            <input type="text" class="form-control" id="dni" name="dni" placeholder="Dni">
             <div class="u-error"><?php echo form_error('dni'); ?></div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="dni" class="col-sm-2 control-label">Fecha de Nacimiento</label>
+          <label for="fecha_nac" class="col-sm-2 control-label">Fecha de Nacimiento</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="fec_nac" name="fec_nac" placeholder="fec_nac">
-            <div class="u-error"><?php echo form_error('fec_nac'); ?></div>
+            <input type="text" class="form-control" id="fecha_nac" name="fecha_nac" placeholder="Año-Mes-Dia">
+            <div class="u-error"><?php echo form_error('fecha_nac'); ?></div>
           </div>
         </div>
 
         <div class="form-group">
-          <label for="dni" class="col-sm-2 control-label">Distrito</label>
+          <label for="dist" class="col-sm-2 control-label">Distrito</label>
           <div class="col-sm-4">
-            <select name="dist" id="dist" class="form-control" required="required">
-              <option value="Santa Anita"></option>
-              <option value="SJL"></option>
-              <option value="Puente Piedra"></option>
+            <select name="dist" id="dist" class="form-control" required="">
+              <option value="0">[Seleccione un distrito]</option>
+              <option value="1">Santa Anita</option>
+              <option value="2">SJL</option>
+              <option value="3">Puente Piedra</option>
             </select>
             <div class="u-error"><?php echo form_error('dist'); ?></div>
           </div>
         </div>
         
         <div class="form-group">
-          <label for="dni" class="col-sm-2 control-label">Direccion</label>
+          <label for="dire" class="col-sm-2 control-label">Direccion</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="dire" name="dire" placeholder="dire">
+            <input type="text" class="form-control" id="dire" name="dire" placeholder="Direccion">
             <div class="u-error"><?php echo form_error('dire'); ?></div>
           </div>
         </div>
