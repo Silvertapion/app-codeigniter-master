@@ -47,7 +47,7 @@ class Curriculum extends CI_Controller {
             $_post = $this->input->post();
 
 			$_result =  $this->Curriculum_model->add($_post );
-				
+
 			if ($_result) 
 							
 				redirect($this->controller.'/show');
@@ -215,13 +215,7 @@ class Curriculum extends CI_Controller {
 			 exit(json_encode(array('status'=>FALSE,'message'=>'id no registrado')));
  		} 
  		 	
- 		
- 		
-
-
+ 	
 	}
-
-
-
 
 }
