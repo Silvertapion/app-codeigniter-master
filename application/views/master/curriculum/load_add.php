@@ -43,8 +43,8 @@
         <div class="form-group">
 
           <label for="dni" class="col-sm-2 control-label">Dni</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="dni" name="dni" placeholder="Dni">
+          <div class="col-sm-2">
+            <input value="<?php echo set_value('dni'); ?>" type="text" class="form-control" id="dni" name="dni" placeholder="Dni">
 
             <div class="u-error"><?php echo form_error('dni'); ?></div>
           </div>
@@ -54,7 +54,7 @@
 
           <label for="fecha_nac" class="col-sm-2 control-label">Fecha de Nacimiento</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="fecha_nac" name="fecha_nac" placeholder="Año-Mes-Dia">
+            <input value="<?php echo set_value('fecha_nac'); ?>" type="text" class="form-control" id="fecha_nac" name="fecha_nac" placeholder="Año-Mes-Dia">
             <div class="u-error"><?php echo form_error('fecha_nac'); ?></div>
 
           </div>
@@ -68,8 +68,8 @@
 
               <option value="0">[Seleccione un distrito]</option>
               <option value="Santa Anita">Santa Anita</option>
-              <option value="2">SJL</option>
-              <option value="3">Puente Piedra</option>
+              <option value="SJL">SJL</option>
+              <option value="Puente Piedra">Puente Piedra</option>
 
             </select>
             <div class="u-error"><?php echo form_error('distrito'); ?></div>
@@ -81,11 +81,59 @@
 
           <label for="direccion" class="col-sm-2 control-label">Direccion</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+            <input value="<?php echo set_value('direccion'); ?>" type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
             <div class="u-error"><?php echo form_error('direccion'); ?></div>
           </div>
         </div>
-     
+
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">Experiencia Laboral</h3>
+          </div><!-- /.box-header -->
+          
+        </div>
+        
+        <div class="form-group">
+
+          <label for="empresa" class="col-sm-2 control-label">Empresa</label>
+          <div class="col-sm-4">
+            <input value="<?php echo set_value('empresa'); ?>" type="text" class="form-control" id="empresa" name="empresa" placeholder="Empresa">
+
+            <div class="u-error"><?php echo form_error('empresa'); ?></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+          <div class="col-sm-2">
+            <input value="<?php echo set_value('telefono'); ?>" type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+
+            <div class="u-error"><?php echo form_error('telefono'); ?></div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="year_ini" class="col-sm-2 control-label">Año Inicio</label>
+          <div class="col-sm-2">
+            <input value="<?php echo set_value('year_ini'); ?>" type="text" class="form-control" id="year_ini" name="year_ini" placeholder="Año Inicio">
+
+            <div class="u-error"><?php echo form_error('year_ini'); ?></div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="year_fin" class="col-sm-2 control-label">Año Fin</label>
+          <div class="col-sm-2">
+            <input value="<?php echo set_value('year_fin'); ?>" type="text" class="form-control" id="year_fin" name="year_fin" placeholder="Año Fin">
+
+            <div class="u-error"><?php echo form_error('year_fin'); ?></div>
+          </div>
+        </div>
         
       </div><!-- /.box-body -->
       <div class="box-footer">

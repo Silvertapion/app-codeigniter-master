@@ -109,9 +109,6 @@ class Curriculum extends CI_Controller {
 	public function update()
 	{
 
- 
-
-
 		$id = $this->input->post('id',TRUE);
 		
 		$this->validar_post($id);
@@ -126,12 +123,8 @@ class Curriculum extends CI_Controller {
 
 			$this->load->view('dashboard/layout_index',$data);
               
-        }
-        else
-        {
-        	
-        	 
-
+        }else{
+        	      	 
         	$data['nombre']=$this->input->post('nombre',TRUE);
         	$data['apellidos']=$this->input->post('apellidos',TRUE);
         	$data['dni']=$this->input->post('dni',TRUE);
@@ -149,17 +142,7 @@ class Curriculum extends CI_Controller {
 
 				exit(json_encode(array('status'=>FALSE,'message'=>'Error al ACTUALIZAR los datos')));	  
 
-
-
-
-
         }
-
-
-
-			
-
-
 
 	}
 	//Eliminar un determinado registro
@@ -180,32 +163,24 @@ class Curriculum extends CI_Controller {
 		if ($_result) 
 			redirect($this->controller.'/show');
 		else
-			exit(json_encode(array('status'=>FALSE,'message'=>'Error al eliminar los datos')));	  
-
-
-
- 		 
+			exit(json_encode(array('status'=>FALSE,'message'=>'Error al eliminar los datos')));		 
 	}
-	public function registro()
-	{
-
-
-	}
+	
 
 	private function validar_post($id = FALSE)
 	{
 		$this->load->helper(array('form'));
 
- 		$this->form_validation->set_rules('nombre', 'lang:nombre', 'required|max_length[150]');
-
- 		$this->form_validation->set_rules('apellidos', 'lang:apellidos', 'required|max_length[150]');
-
- 		$this->form_validation->set_rules('dni', 'lang:dni', 'required|min_length[8]|max_length[8]|integer');
-		$this->form_validation->set_rules('fecha_nac', 'lang:fecha_nac', 'required|max_length[25]');
-		$this->form_validation->set_rules('distrito', 'lang:distrito', 'required|max_length[150]');
-		$this->form_validation->set_rules('direccion', 'lang:direccion', 'required|max_length[150]'); 		
-
-
+ 		$this->form_validation->set_rules('nombre', 'lang:nombre', 'trim|required|max_length[150]');
+ 		$this->form_validation->set_rules('apellidos', 'lang:apellidos', 'trim|required|max_length[150]');
+ 		$this->form_validation->set_rules('dni', 'lang:dni', 'trim|required|min_length[8]|max_length[8]|integer');
+		$this->form_validation->set_rules('fecha_nac', 'lang:fecha_nac', 'trim|required|min_length[10]|max_length[10]');
+		$this->form_validation->set_rules('distrito', 'lang:distrito', 'trim|required|max_length[150]');
+		$this->form_validation->set_rules('direccion', 'lang:direccion', 'trim|required|max_length[150]');
+		$this->form_validation->set_rules('empresa', 'lang:empresa', 'trim|required|max_length[150]');
+		$this->form_validation->set_rules('telefono', 'lang:telefono', 'trim|required|min_length[7]|max_length[9]|integer');
+		$this->form_validation->set_rules('year_ini', 'lang:year_ini', 'trim|required|min_length[4]|max_length[4]|integer');
+		$this->form_validation->set_rules('year_fin', 'lang:year_fin', 'trim|required|min_length[4]|max_length[4]|integer');
 
  		if ($id){
  			if (!is_numeric($id)) 
