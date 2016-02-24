@@ -16,7 +16,6 @@
  
                   <h3 class="box-title">Listado de Curriculum</h3>
  
- 
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="tabla" class="table table-bordered table-hover">
@@ -29,16 +28,12 @@
                         <th>Fecha Nacimiento</th>
                         <th>Distrito</th>
                         <th>Direccion</th>
-                        <th>Empresa</th>
-                        <th>Telefono</th>
-                        <th>Año Inicio</th>
-                        <th>Año Fin</th>
+                        <th>Experiencia Laboral</th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
-                    <?php
- 
+                    <?php 
  
                       $_count = count($items);
 
@@ -52,10 +47,8 @@
                         <td><?php echo $items[$i]->fecha_nac ?></td>                        
                         <td><?php echo $items[$i]->distrito ?></td>
                         <td><?php echo $items[$i]->direccion ?></td>
-                        <td><?php echo $items[$i]->empresa ?></td>
-                        <td><?php echo $items[$i]->telefono ?></td>
-                        <td><?php echo $items[$i]->year_ini ?></td>
-                        <td><?php echo $items[$i]->year_fin ?></td>
+                        <td><a href="" class="btn btn-primary exp_lab"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></a></td>
+                      
  
                         <td>
                           <a href="<?php echo base_url($controller.'/edit/'.$items[$i]->id) ?>" class="btn btn-success"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>

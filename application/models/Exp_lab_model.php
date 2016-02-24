@@ -1,9 +1,9 @@
 <?php 
 
 /**
-* Clase Curriculum_model
+* Clase Exp_lab_model
 */
-class Curriculum_model extends CI_Model
+class Exp_lab_model extends CI_Model
 {
 	
 	private $tabla;
@@ -12,7 +12,7 @@ class Curriculum_model extends CI_Model
             // Call the CI_Model constructor
             parent::__construct();
 
-            $this->tabla = "curriculum";
+            $this->tabla = "exp_lab";
         }
     //agregar registros
     public function add($_post)
@@ -58,9 +58,6 @@ class Curriculum_model extends CI_Model
     	
     	return $this->db->where("id",$id)->get($this->tabla)->row();
     }
-    public function getIp()
-    {
-        echo "mi ip es: ";
-    }
+    
 }
 

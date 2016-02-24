@@ -42,8 +42,11 @@
 
   <link rel="stylesheet" href="<?php echo base_url('public/bootstrap/css/estilos.css'); ?>">
 
-   <!-- jQuery 2.1.4 -->
-    <script src="<?php echo base_url('public/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>
+  <!-- jQuery 2.1.4 -->
+  <script src="<?php echo base_url('public/plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>
+  <script src="<?php echo base_url('public/jquery/functions.js') ?>"></script>
+  <?php $this->load->view('load_modal') ?>
+   
   <script> var URL = "<?php echo base_url() ?>"</script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">

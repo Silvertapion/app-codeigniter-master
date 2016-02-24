@@ -65,20 +65,16 @@
           <label for="distrito" class="col-sm-2 control-label">Distrito</label>
           <div class="col-sm-4">
             <select name="distrito" id="distrito" class="form-control" required="">
-
               <option value="0">[Seleccione un distrito]</option>
               <option value="Santa Anita">Santa Anita</option>
               <option value="SJL">SJL</option>
               <option value="Puente Piedra">Puente Piedra</option>
-
             </select>
             <div class="u-error"><?php echo form_error('distrito'); ?></div>
-
           </div>
         </div>
         
         <div class="form-group">
-
           <label for="direccion" class="col-sm-2 control-label">Direccion</label>
           <div class="col-sm-6">
             <input value="<?php echo set_value('direccion'); ?>" type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
@@ -89,26 +85,21 @@
         <div class="box box-info">
           <div class="box-header with-border">
             <h3 class="box-title">Experiencia Laboral</h3>
-          </div><!-- /.box-header -->
-          
+          </div><!-- /.box-header -->          
         </div>
         
         <div class="form-group">
-
           <label for="empresa" class="col-sm-2 control-label">Empresa</label>
           <div class="col-sm-4">
             <input value="<?php echo set_value('empresa'); ?>" type="text" class="form-control" id="empresa" name="empresa" placeholder="Empresa">
-
             <div class="u-error"><?php echo form_error('empresa'); ?></div>
           </div>
         </div>
 
         <div class="form-group">
-
           <label for="telefono" class="col-sm-2 control-label">Telefono</label>
           <div class="col-sm-2">
             <input value="<?php echo set_value('telefono'); ?>" type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-
             <div class="u-error"><?php echo form_error('telefono'); ?></div>
           </div>
         </div>

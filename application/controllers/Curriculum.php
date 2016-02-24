@@ -14,6 +14,7 @@ class Curriculum extends CI_Controller {
         $this->controller = strtolower(get_class()) ;
 
         $this->load->model("Curriculum_model");
+        $this->load->model("Exp_lab_model");
 
         $this->load->library('form_validation');
 
@@ -39,14 +40,29 @@ class Curriculum extends CI_Controller {
         	$data["view"] = 'master/'.$this->controller.'/load_add';
 
 			$this->load->view('dashboard/layout_index',$data);
-
               
         }
         else
         {
-            $_post = $this->input->post();
+            //$_post = $this->input->post();
+           
+            $_a_curriculum['nombre'] = $this->input->post("nombre");
+            $_a_curriculum['apellidos'] = $this->input->post("apellidos");
+            $_a_curriculum['dni'] = $this->input->post("dni");
+            $_a_curriculum['fecha_nac'] = $this->input->post("fecha_nac");
+            $_a_curriculum['distrito'] = $this->input->post("distrito");
+            $_a_curriculum['direccion'] = $this->input->post("direccion");
 
-			$_result =  $this->Curriculum_model->add($_post );
+            $_a_exp_lab['empresa'] = $this->input->post("empresa");
+            $_a_exp_lab['telefono'] = $this->input->post("telefono");
+            $_a_exp_lab['year_ini'] = $this->input->post("year_ini");
+            $_a_exp_lab['year_fin'] = $this->input->post("year_fin");
+
+			$_result = $this->Curriculum_model->add($_a_curriculum);
+			$_insert_id = $insert_id = $this->db->insert_id();
+			$_a_exp_lab['id'] = $_insert_id;
+			
+			$_result_exp = $this->Exp_lab_model->add($_a_exp_lab);
 
 			if ($_result) 
 							
@@ -63,9 +79,6 @@ class Curriculum extends CI_Controller {
 	public function show()
 	{
 
-		 
-
- 
 		$data["controller"] = $this->controller;
 
 		$data['items'] = $this->Curriculum_model->get();

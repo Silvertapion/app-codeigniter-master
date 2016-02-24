@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-02-2016 a las 20:01:30
--- Versión del servidor: 5.5.47-0ubuntu0.14.04.1
+-- Tiempo de generación: 24-02-2016 a las 12:33:45
+-- Versión del servidor: 5.5.46-0ubuntu0.14.04.2
 -- Versión de PHP: 5.5.9-1ubuntu4.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -88,24 +88,50 @@ CREATE TABLE IF NOT EXISTS `curriculum` (
   `fecha_nac` date NOT NULL,
   `distrito` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `direccion` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=11 ;
+
+--
+-- Volcado de datos para la tabla `curriculum`
+--
+
+INSERT INTO `curriculum` (`id`, `nombre`, `apellidos`, `dni`, `fecha_nac`, `distrito`, `direccion`, `estado`) VALUES
+(1, 'Anibal', 'Chacon', '72421760', '2016-02-01', 'Santa Anita', 'Calle Suerte 777', 1),
+(2, 'Diego', 'Aguirre', '12345678', '1994-09-17', 'La Victoria', 'Calle ganador 777', 1),
+(3, 'asd', 'asd', '12345678', '0000-00-00', 'Santa Anita', 'fhgvhgf', 99),
+(4, 'dsfd', 'fdgfgfd', '12345678', '0000-00-00', '0', 'fhgvhgf', 1),
+(5, 'gh', 'fdgfgfd', '12345678', '1944-12-10', '2', 'fhgvhgf', 1),
+(6, 'asd', 'asd', '78945612', '1994-02-15', 'Santa Anita', 'dsa', 1),
+(7, 'asd', 'asd', '78945612', '1994-02-15', 'Santa Anita', 'dsa', 1),
+(8, 'asd', 'asd', '78945612', '1994-02-15', 'Santa Anita', 'dsa', 1),
+(9, 'asd', 'asd', '78945612', '1994-02-15', 'Santa Anita', 'dsa', 1),
+(10, 'Asd', 'Bonilla', '78945612', '1994-02-15', 'Puente Piedra', 'dsa', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `exp_lab`
+--
+
+CREATE TABLE IF NOT EXISTS `exp_lab` (
+  `id` int(11) NOT NULL,
   `empresa` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `telefono` char(9) COLLATE utf8_spanish_ci NOT NULL,
   `year_ini` year(4) NOT NULL,
   `year_fin` year(4) NOT NULL,
   `estado` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `curriculum`
+-- Volcado de datos para la tabla `exp_lab`
 --
 
-INSERT INTO `curriculum` (`id`, `nombre`, `apellidos`, `dni`, `fecha_nac`, `distrito`, `direccion`, `empresa`, `telefono`, `year_ini`, `year_fin`, `estado`) VALUES
-(1, 'Anibal', 'Chacon', '72421760', '2016-02-01', 'Santa Anita', 'Calle Suerte 777', 'Good Luck', '911259899', 2013, 2015, 1),
-(2, 'Diego', 'Aguirre', '12345678', '1994-09-17', 'La Victoria', 'Calle ganador 777', 'Campeones', '987654321', 2000, 2015, 1),
-(3, 'asd', 'asd', '12345678', '0000-00-00', 'Santa Anita', 'fhgvhgf', 'gchfgchfghgf', 'ghfghgf', 0000, 0000, 99),
-(4, 'dsfd', 'fdgfgfd', '12345678', '0000-00-00', '0', 'fhgvhgf', 'gchfgchfghgf', '7321455', 1999, 2015, 1),
-(5, 'gh', 'fdgfgfd', '12345678', '1944-12-10', '2', 'fhgvhgf', 'gchfgchfghgf', '7321455', 1999, 2015, 1);
+INSERT INTO `exp_lab` (`id`, `empresa`, `telefono`, `year_ini`, `year_fin`, `estado`) VALUES
+(8, 'asdsd', '1234657', 1994, 2005, 1),
+(9, 'asdsd', '1234657', 1994, 2005, 1),
+(10, 'sdfdsf', '1234567', 1998, 2015, 1);
 
 -- --------------------------------------------------------
 
